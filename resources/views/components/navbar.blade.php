@@ -1,6 +1,6 @@
-<nav class="bg-blue-700 flex justify-between items-center p-5 text-white uppercase">
+<nav class="bg-blue-700 flex justify-between items-center p-5 text-white uppercase w-auto">
     <div>
-        <h1 class="text-3xl text-white font-bold">Laravel with Spatie</h1>
+        <h1 class="text-3xl text-white font-bold">Ipt-2</h1>
     </div>
 
     <div class="flex gap-5">

@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-namespace App\Http\Controllers;
 
 use App\Models\Record;
 use Illuminate\Http\Request;
@@ -12,6 +11,19 @@ class RecordController extends Controller
     {
         $records = Record::all();
         return view('events.index', compact('records'));
+    }
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'phone' => 'required|string|max:20',
+        ]);
+
+        Record::create($request->all());
+
+        return redirect()->route('events.index')->with('success', 'Record added successfully.');
     }
 
     public function edit(Record $record)

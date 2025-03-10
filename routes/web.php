@@ -5,14 +5,15 @@ use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Record;
 
-use App\Http\Controllers\RecordController; // Import the RecordController
+use App\Http\Controllers\RecordController;
 
-// Events Listing
+
 Route::get('/events', [RecordController::class, 'index'])
     ->name('events.index')
     ->middleware(['auth', 'can:view-events']);
+    Route::post('/events', [RecordController::class, 'store'])->name('events.store');
 
-// Group routes that require `manage-events` permission (Admins Only)
+
 Route::middleware(['auth', 'can:manage-events'])->group(function () {
     Route::get('/events/{record}/edit', [RecordController::class, 'edit'])->name('events.edit');
     Route::put('/events/{record}', [RecordController::class, 'update'])->name('events.update');

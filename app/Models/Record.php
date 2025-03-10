@@ -9,5 +9,5 @@ class Record extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'email', 'phone']; // Allow mass assignment
+    protected $fillable = ['name', 'email', 'phone'];
 }

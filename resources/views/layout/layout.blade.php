@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 
-<body class="overflow-hidden">
+<body class="overflow-auto">
     @include('components.navbar')
 
     <div class="container mx-auto p-5">
@@ -17,4 +17,4 @@
     </div>
 </body>
 
-</html>
+</html>2

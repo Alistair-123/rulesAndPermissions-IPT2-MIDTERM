@@ -46,7 +46,7 @@ class RolesAndPermissionsSeeder extends Seeder
             'password' => bcrypt('user123'),
         ]);
 
-        // Assign user role
+
         if (!$normalUser->hasRole('user')) {
             $normalUser->assignRole('user');
         }
